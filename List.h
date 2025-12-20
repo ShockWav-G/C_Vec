@@ -40,7 +40,6 @@
 		type List_Get_##type(List_##type *vec, int index){\
 		if(index < vec->size)return vec->data[index];\
 			}\
-
 	void List_Set_##type(List_##type *vec, int index, type value){\
 		if(index >= vec->capacity) return;\
 		vec->data[index] = value;\
