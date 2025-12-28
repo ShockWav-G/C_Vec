@@ -44,6 +44,13 @@
 		if(index >= vec->capacity) return;\
 		vec->data[index] = value;\
 		if(index >= vec->size)		vec->size = index + 1;\
-	}
+	}\
+	void List_Foreach_##type(List_##type *vec, void (*func)(type *data)){\
+					for(int i = 0; i < vec->size; ++i){\
+						func(&vec->data[i]);\
+						}\
+						}
+
+
 
 
