@@ -3,13 +3,25 @@
 #include <string.h>
 
 
-#define List_Implement(type) \
+#define List_Define(type)\
 	typedef struct{ \
 		type * data;\
 		size_t size;\
 		size_t capacity;\
-		\
 	}List_##type;\
+	List_##type	List_New_##type(size_t elements);\
+	void List_Delete_##type(List_##type * vec);\
+	void	List_Resize_##type(List_##type *vec, size_t elements);\
+	void List_Push_##type(List_##type* vec, type val);\
+		type List_Get_##type(List_##type *vec, int index);\
+	void List_Set_##type(List_##type *vec, int index, type value);\
+	void List_Foreach_##type(List_##type *vec, void (*func)(type *data));
+
+
+
+
+		
+#define List_Implement(type) \
 	List_##type	List_New_##type(size_t elements){\
 		List_##type out;\
 		out.data = malloc(sizeof(type) * elements);\
