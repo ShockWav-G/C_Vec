@@ -1,6 +1,12 @@
+
+#ifndef LIST_H
+#define LIST_H
+
+#ifdef LIST_DEPENDENCIES
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#endif
 
 
 #define List_Define(type)\
@@ -64,5 +70,5 @@
 						}
 
 
-
+#endif
 
